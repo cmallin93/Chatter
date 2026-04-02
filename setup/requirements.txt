@@ -1,0 +1,3 @@
+# requirements.txt
+# Note: these should be installed via a bootstrap script to keep your environment clean
+conan==2.9.0

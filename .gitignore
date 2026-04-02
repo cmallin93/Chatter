@@ -1,0 +1,10 @@
+# Visual Studio files
+.vs/
+
+# Python virtual environment
+.venv/
+
+# Conan generated files
+# Conan generates these, shouldn't be committed
+build/
+CMakeUserPresets.json
