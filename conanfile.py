@@ -22,11 +22,10 @@ class ChatterConan(ConanFile):
     # -------------------------------------------------------------------------
     # Any Conan packages that Chatter needs go here, separated by build and runtime requirements
     def requirements(self):
-        pass  # no external deps yet add here as needed e.g.:
-              # self.requires("asio/1.28.0")
+        self.requires("boost/1.86.0")
 
     def build_requirements(self):
-        # build-only tools not linked into the final library
+        # Build specific tools not linked into the final library
         self.test_requires("gtest/1.14.0")
 
     # -------------------------------------------------------------------------

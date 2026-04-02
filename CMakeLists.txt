@@ -12,7 +12,7 @@ endif()
 project ("Chatter")
 
 # Add source to this project's executable.
-add_executable (Chatter "Chatter.cpp" "Chatter.h")
+add_executable (Chatter "src/Chatter.cpp" "src/Chatter.h")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET Chatter PROPERTY CXX_STANDARD 20)
