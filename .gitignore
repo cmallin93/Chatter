@@ -1,5 +1,6 @@
-# Visual Studio files
+# Visual Studio/Code files
 .vs/
+.vscode/
 
 # Python virtual environment
 .venv/

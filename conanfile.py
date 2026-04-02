@@ -1,5 +1,7 @@
 from conan import ConanFile
 from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout, CMakeDeps
+from conan.tools.files import copy
+import os
 
 class ChatterConan(ConanFile):
     # -------------------------------------------------------------------------
@@ -40,6 +42,21 @@ class ChatterConan(ConanFile):
         # declared in requirements() above
         deps = CMakeDeps(self)
         deps.generate()
+
+        # Handle any licensing
+        # Collect all licenses from dependencies
+        # TODO come back to pulling licenses
+        for dep in self.dependencies.values():
+            copy(self, "LICENSE*",
+                src=dep.package_folder,
+                dst=os.path.join(self.build_folder, "licenses", dep.ref.name),
+                keep_path=False
+            )
+            copy(self, "COPYING*",
+                src=dep.package_folder,
+                dst=os.path.join(self.build_folder, "licenses", dep.ref.name),
+                keep_path=False
+            )
 
     # -------------------------------------------------------------------------
     # Build

@@ -1,0 +1,54 @@
+# Use the LLVM style as a base
+BasedOnStyle: LLVM
+
+# Handle indents and line breaks
+IndentWidth: 4
+ColumnLimit: 100
+
+# Handle parameter/arguments
+BinPackParameters: false
+BinPackArguments: false
+
+# Handle templates
+AlwaysBreakTemplateDeclarations: Yes
+
+# Handle brace wrapping
+BreakConstructorInitializers: BeforeComma
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterClass:   true
+  AfterStruct:  true
+  AfterUnion:   true
+  BeforeCatch:  true
+  AfterCaseLabel:         false
+  AfterControlStatement:  false
+  AfterEnum:              false
+  AfterFunction:          false
+  AfterNamespace:         false
+  AfterObjCDeclaration:   false
+  AfterExternBlock:       false
+  BeforeElse:             false
+
+# Handle single line statements
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Empty
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Inline
+
+# Handle includes. Reorganize in priority:
+# "Magic" headers, then main header file (default 0), 
+#  then standard includes, then this project's includes
+IncludeCategories:
+  - Regex: '"stdafx.h"'
+    Priority: -1
+  - Regex: '<.*>'
+  - Priority: 1
+  - Regex: '".*/.*"'
+  - Priority: 2
+IncludeBlocks: Regroup
+
+# Handle alignments of pointers/references 
+DerivePointerAlignment: false
+PointerAlignment: Left
+ReferenceAlignment: Left

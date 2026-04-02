@@ -15,5 +15,16 @@ Setup your environment via prepared scripts depending on your OS.
 - MacOS: (coming soon)
 - Linux: (coming soon)
 
+### Linting
+To automatically use the linter, your setup will require clang-format. If in VS Code, you can add a block like this into your .vscode/settings.json file (might need to create it yourself)
+```
+{    
+    "[cpp]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    }
+}
+``` 
+
 ## Building
 (coming soon)
